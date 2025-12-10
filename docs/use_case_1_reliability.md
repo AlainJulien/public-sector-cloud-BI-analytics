@@ -141,7 +141,7 @@ Created manually using Athena:
         dim_service[service_id]→ fact_performance[service_id]
         dim_region[region_id]  → fact_performance[region_id]
 
-# 6. Dashboards
+# 6. Dashboard
 ##  Reliability
 ### Executive Overview
     Key visuals:
