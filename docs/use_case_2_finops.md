@@ -235,7 +235,7 @@ sql
 -   Budget Governance: several MDAs overspent on a YTD basis *input %*
                      : Forecast indicates possible budget issues in Q3 if no intervention is done
 -   Waste & Optimization: Significant spend is linked to Idle resources 
-                        : Untagged costs leads to reduced financial transparency and weakens chargeback () / showback (IT/cloud cost to BUs) models
+                        : Untagged costs leads to reduced financial transparency and weakens chargeback (resources paid for by departments or agencies) / showback (IT/cloud cost presented to BUs) models
 -   Provider Strategy: High concentration risk as some MDAs are rely heavily on AWS
                      : Some MDAs show multi-clod fragmentation which can lead to complex governance
 

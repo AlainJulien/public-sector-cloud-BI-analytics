@@ -8,7 +8,7 @@ This summary provides short, medium, and long-form descriptions of the project, 
 
 Designed and built a full **public-sector cloud BI analytics platform** using **AWS (S3, Glue, Athena)** and **Power BI**, focused on:
 - **Digital Service Reliability & SLA performance**
-- **Budget Governance & Forecasting (FinOps)**
+- **FinOps — Budget Governance, Forecasting & Cloud Cost Optimization**
   
 Delivered a curated star schema, Athena-based data lake, and executive dashboards that demonstrate end-to-end BI engineering capability in an AWS environment with real-world public-sector constraints.
 

@@ -11,6 +11,7 @@ Showing a unified view of services after migration to the cloud
 
 # 1. Project Title: Public Sector Cloud BI Analytics - Reliability, Performance & Cost Governance
 
+
 # 2. Summary
     This Business Intelligence (BI) solution is designed to empower ministries and public-sector agencies by ensuring both the reliability and performance of their cloud services while simultaneously maintaining rigorous budget control and financial oversight. By integrating AWS-style analytics stack with FinOps cost data, the solution delivers actionable insights into service uptime, system performance, and operational expenditures. It enables agencies to monitor service reliability in real time, forecast future costs, and enforce governance practices to align with budget constraints. This dual-purpose approach supports both operational efficiency and financial accountability in the public sector's cloud environments.
 
@@ -19,6 +20,7 @@ Showing a unified view of services after migration to the cloud
     - Star-schema modeling: Analytics
     - Power BI dashboard: Storytelling
     - Two Business Narratives
+
 
 # 3. Business Narratives
    a. Narrative 1 - Digital Service Reliability & Performance
@@ -35,7 +37,7 @@ Showing a unified view of services after migration to the cloud
                         c. Service Risk ranking across agencies and regions
                         d. Relationship between utilisation, cost and reliability
 
-   b. Narrative 2 - Budget Governance & Forecasting (FinOps)
+   b. Narrative 2 - FinOps — Budget Governance, Forecasting & Cloud Cost Optimization
                     Cloud cost management is a significant challenge for public-sector agencies, with cost variability and waste often resulting from ineffective resource management and poor tagging practices. This BI solution integrates FinOps data to enable precise cost forecasting, enforce tagging governance, and identify inefficiencies. This approach helps agencies minimize waste, stay within budget, and ensure financial transparency while forecasting future expenses with greater accuracy.
 
                     - Areas MDAs have issues with post migration
@@ -50,6 +52,7 @@ Showing a unified view of services after migration to the cloud
                         c. Tagging compliance & untagged spend
                         d. Idle cost optimisation opportunities
                         e. Strategy for Multi-cloud providers
+
 
 # 4. Architecture Overview
     This projct uses a hybrid Glue & Athena setup due to restictions encountered on the AWS account in use. This would therefore reflect a workaround in the event on constraints on an account.
@@ -136,6 +139,7 @@ Showing a unified view of services after migration to the cloud
                  fact_provider_spend
                         |
                  dim_cloud_provider
+
 
 # 6. SQL Models
     RAW Layer
@@ -226,6 +230,7 @@ Showing a unified view of services after migration to the cloud
 
      Here the Reliability and FinOps fact tables were created: fact_performance, fact_migration_summary, fact_cost_monthly, fact_finance_governance, fact_provider_finance, fact_forecast_input. Basic views were derived as well; v_cost_spikes, v_cloud_waste for optics in the event of leadership ask.
 
+
 # 7. Dashboards
     Below are screenshots for each page of the PowerBI dashboard. 
     Power BI connected to Athena via Amazon Athena ODBC driver to load data from the S3 bucket.
@@ -250,29 +255,33 @@ Showing a unified view of services after migration to the cloud
 
     - Executive Summary (One-page view for executives): YTD Spend, Variance, Waste %, AWS dependency, High-level trend with forecast, Budget vs Actual Budget mini-view, Optimisation opportunities (untagged + idle cost + high-risk spend), Top agencies at financial risk
 
+
 # 8. Key Insights
-    Find 4 - 6 insights executives would take interest in
-    Digital Services Reliability & Performance insights
+##    Digital Services Reliability & Performance insights
         "Some agencies show better stability and lowr SLA breaches post migration"
         "A few agencies carry high engineering risks due to: under-utlized resources , low tagging compliance"
         "Opportunities exist for auto-scaling, caching, service refactoring"
-    e.g. Migration improved stability by 28% across critical services.”
+    e.g. Migration improved stability by 28% across critical services."
         "Two agencies consumed 60% of the cloud budget due to storage-heavy workloads."
         "Forecast indicates a 12% budget overrun by Q4 without efficiency improvements."
         "Untagged cost accounted for 18% of spend, violating tagging policy guidelines."
         "Idle resources represent $180K/year in avoidable waste."
+    
+##    FinOps — Budget Governance, Forecasting & Cloud Cost Optimization insights
+-       Budget Governance: several MDAs overspent on a YTD basis *input %*
+                         : Forecast indicates possible budget issues in Q3 if no intervention is done
+-       Waste & Optimization: Significant spend is linked to Idle resources 
+                            : Untagged costs leads to reduced financial transparency and weakens chargeback (resources paid for by departments or agencies) / showback (IT/cloud cost presented to BUs) models
+-       Provider Strategy: High concentration risk as some MDAs are rely heavily on AWS
+                         : Some MDAs show multi-clod fragmentation which can lead to complex governance
+    
 
 # 9. Recommendations
     High-level governance and optimisation guidance:
-
     - Improve tagging policies
-
     - Implement quarterly forecasting cycles
-
     - Rightsize idle or under-utilised workloads
-
     - Introduce cost anomaly alerts
-
     - Expand PaaS usage to reduce IaaS-heavy costs
 
 # 10. How to Run this Project
@@ -303,8 +312,9 @@ Showing a unified view of services after migration to the cloud
     f. FinOps Governance (Budget vs Actual, cost forecasting, tagging governance, waste analysis)
     g. Public-Sector Analytics (A focus on MDAs, budgets and constraints, auditability and accountability)
 
+
 # 13. About the Author
-    Write a short paragraph about myself using these egs. Public-sector BI & systems analyst, AWS-focused BI transition and digital government and cloud analytics
+    Hi, I'm Alain Julien a public-sector business intelligence and systems analyst with hands-on experience supporting enterprise HR, cloud-migration, and data-modernization initiatives across government. My work involved BI, data modeling, business process optimization, stakeholder managment, system testing and understanding and identifying day-to-day operational analytics to help MDAs make faster, evidence-driven decisions. I am currently transitioning into business intelligence engineering, with the use of AI-assisted insights to build cloud-ready analytics solutions and end-to-end data pipelines. My goal is truly seeing the impact data can have on creating a digital government and improving how public institution services serve people, while identifying measurable transformations goals to help institutions reach this goal.
 
 
 #   Dashboard Gallery

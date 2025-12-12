@@ -3,11 +3,10 @@
 
 This document describes the end-to-end architecture used to support two analytical narratives:
 1. **Digital Service Reliability & Performance**
-2. **Budget Governance & Forecasting: FinOps**
+2. **FinOps — Budget Governance, Forecasting & Cloud Cost Optimization**
 
 The architecture reflects the constraints and operating patterns commonly found in public-sector AWS environments, including restricted IAM permissions and limited use of automation.
 
----
 
 ## 1. High-Level Architecture
     Synthetic CSV - S3 (raw zone)
@@ -17,15 +16,15 @@ The architecture reflects the constraints and operating patterns commonly found 
     - Power BI (Simba Athena ODBC)
     - Reliability + FinOps dashboards
 
-    Key principles:
-    - Use **S3** as the primary data lake layer.
-    - Use **Glue Data Catalog** for metadata (DBs and some tables created manually).
-    - Use **Athena SQL** for:
-    - Raw table creation  
-    - Data quality checks  
-    - Curated data modeling (CTAS)  
-    - Use **Parquet** format for curated analytics.
-    - Connect **Power BI** directly to Athena using the ODBC driver.
+##   Key principles:
+    - Use S3 as the primary data lake layer.
+    - Use Glue Data Catalog for metadata (DBs and some tables created manually).
+    - Use Athena SQL for:
+        - Raw table creation  
+        - Data quality checks  
+        - Curated data modeling (CTAS)  
+        - Use Parquet format for curated analytics.
+    - Connect Power BI directly to Athena using the ODBC driver.
 
 
 ## 2. Why a Hybrid Glue + Athena Approach?

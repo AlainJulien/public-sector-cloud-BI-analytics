@@ -175,6 +175,6 @@ Created manually using Athena:
         Migration summary table
 
 ### Insights Gained
--   Some agencies show better stability and lowr SLA breaches post migration
--   A few agencies carry high engineering risks due to: under-utlized resources , low tagging compliance
+-   Some agencies show better stability and lower SLA breaches post migration
+-   A few agencies carry high engineering risks due to: under-utilized resources, low tagging compliance
 -   Opportunities exist for auto-scaling, caching, service refactoring
