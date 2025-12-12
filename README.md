@@ -1,9 +1,9 @@
 # Public-Sector Cloud BI Analytics
 Showing a unified view of services after migration to the cloud
 
-1. Project Title: Public Sector Cloud BI Analytics - Reliability, Performance & Cost Governance
+# 1. Project Title: Public Sector Cloud BI Analytics - Reliability, Performance & Cost Governance
 
-2. Summary
+# 2. Summary
     This Business Intelligence (BI) solution is designed to empower ministries and public-sector agencies by ensuring both the reliability and performance of their cloud services while simultaneously maintaining rigorous budget control and financial oversight. By integrating AWS-style analytics stack with FinOps cost data, the solution delivers actionable insights into service uptime, system performance, and operational expenditures. It enables agencies to monitor service reliability in real time, forecast future costs, and enforce governance practices to align with budget constraints. This dual-purpose approach supports both operational efficiency and financial accountability in the public sector's cloud environments.
 
     AWS Stack used:
@@ -12,7 +12,7 @@ Showing a unified view of services after migration to the cloud
     - Power BI dashboard: Storytelling
     - Two Business Narratives
 
-3. Business Narratives
+# 3. Business Narratives
    a. Narrative 1 - Digital Service Reliability & Performance
                     As public sector agencies migrate to the cloud, maintaining digital service reliability and performance becomes critical. Often, cloud-based systems face challenges such as service disruptions or inconsistent performance. This BI solution addresses these issues by leveraging real-time telemetry data to monitor system uptime and performance, ensuring that any anomalies are quickly detected and resolved. By providing actionable insights, it helps agencies maintain the reliability needed for critical public services.
                     
@@ -43,7 +43,7 @@ Showing a unified view of services after migration to the cloud
                         d. Idle cost optimisation opportunities
                         e. Strategy for Multi-cloud providers
 
-4. Architecture Overview
+# 4. Architecture Overview
     This projct uses a hybrid Glue & Athena setup due to restictions encountered on the AWS account in use. This would therefore reflect a workaround in the event on constraints on an account.
 
     Logical Architecture:   
@@ -53,7 +53,7 @@ Showing a unified view of services after migration to the cloud
                         Power BI: engineering dashboards
 
 
-5. Data Model / Star Schemas
+# 5. Data Model / Star Schemas
 
     All data used for this project has been synthetically generated to reflect that of what AWS public sector would use in their day to day while aligning to that of Caribbean Ministries, Division and Agencies (MDAs) and what they would look at with respect to migrating to the cloud.
 
@@ -116,7 +116,7 @@ Showing a unified view of services after migration to the cloud
                         |
                  dim_cloud_provider
 
-6. SQL Models
+# 6. SQL Models
     RAW Layer
     This layer stores original, unaltered copies of the datasets simulated for this project in the S3 bucket that are queried in Athena but no transformations are applied to the originals. Due to IAM restrictions on the account, below is an example that shows the manual table creation for the raw data:
      --Provider spend table
@@ -205,7 +205,7 @@ Showing a unified view of services after migration to the cloud
 
      Here the Reliability and FinOps fact tables were created: fact_performance, fact_migration_summary, fact_cost_monthly, fact_finance_governance, fact_provider_finance, fact_forecast_input. Basic views were derived as well; v_cost_spikes, v_cloud_waste for optics in the event of leadership ask.
 
-7. Dashboards
+# 7. Dashboards
     Below are screenshots for each page of the PowerBI dashboard. 
     Power BI connected to Athena via Amazon Athena ODBC driver to load data from the S3 bucket.
 
@@ -229,19 +229,19 @@ Showing a unified view of services after migration to the cloud
 
     - Executive Summary (One-page view for executives): YTD Spend, Variance, Waste %, AWS dependency, High-level trend with forecast, Budget vs Actual Budget mini-view, Optimisation opportunities (untagged + idle cost + high-risk spend), Top agencies at financial risk
 
-8. Key Insights
+# 8. Key Insights
     Find 4 - 6 insights executives would take interest in
+    Digital Services Reliability & Performance insights
+        "Some agencies show better stability and lowr SLA breaches post migration"
+        "A few agencies carry high engineering risks due to: under-utlized resources , low tagging compliance"
+        "Opportunities exist for auto-scaling, caching, service refactoring"
     e.g. Migration improved stability by 28% across critical services.”
+        "Two agencies consumed 60% of the cloud budget due to storage-heavy workloads."
+        "Forecast indicates a 12% budget overrun by Q4 without efficiency improvements."
+        "Untagged cost accounted for 18% of spend, violating tagging policy guidelines."
+        "Idle resources represent $180K/year in avoidable waste."
 
-        “Two agencies consumed 60% of the cloud budget due to storage-heavy workloads.”
-
-        “Forecast indicates a 12% budget overrun by Q4 without efficiency improvements.”
-
-        “Untagged cost accounted for 18% of spend, violating tagging policy guidelines.”
-
-        “Idle resources represent $180K/year in avoidable waste.”
-
-9. Recommendations
+# 9. Recommendations
     High-level governance and optimisation guidance:
 
     - Improve tagging policies
@@ -254,7 +254,7 @@ Showing a unified view of services after migration to the cloud
 
     - Expand PaaS usage to reduce IaaS-heavy costs
 
-10. How to Run this Project
+# 10. How to Run this Project
     - Prerequisites: AWS account with S3, Glue and Athena access, Power BI Desktop (free), Ahtena ODBC driver (to connect S3 to Power Bi)
         1. Clone Repo
         2. Create / Upload raw files into S3
@@ -262,18 +262,18 @@ Showing a unified view of services after migration to the cloud
         4. Create scripts for manual raw table creation & CTAS within Athena to build dimensions, facts and views 
         5. Use the Athena ODBC driver and configure DSN (install ODBC driver if needed). Open PowerBI, connect to Athena and import curated tables from ps_cloud_curated and Power Bi auto determines relationships (double check for accuracy). Build any DAX measures needed after loading.
 
-11. Repository Structure
+# 11. Repository Structure
         
-        ├── dashboards/         # Power BI files (reliability + FinOps)
-        ├── data/               # Sample raw/curated data (if included)
-        ├── diagrams/           # Architecture + star schema diagrams
-        ├── docs/               # Detailed write-ups for each use case
-        ├── screenshots/        # PNGs used in README / portfolio
-        ├── sql/                # Athena CTAS + view definitions
-        └── README.md           # This file
+        - dashboards/         # Power BI files (reliability + FinOps)
+        - data/               # Sample raw/curated data (if included)
+        - diagrams/           # Architecture + star schema diagrams
+        - docs/               # Detailed write-ups for each use case
+        - screenshots/        # PNGs used in README / portfolio
+        - sql/                # Athena CTAS + view definitions
+        - README.md           # This file
 
 
-11. Skills Demonstrated & Learned
+# 12. Skills Demonstrated & Learned
     a. BI Engineering (Dimensions, fact tables, CTAS pipelines)
     b. Data Modeling (Star Schemas)
     c. AWS (S3, Glue, Athena)
@@ -282,5 +282,5 @@ Showing a unified view of services after migration to the cloud
     f. FinOps Governance (Budget vs Actual, cost forecasting, tagging governance, waste analysis)
     g. Public-Sector Analytics (A focus on MDAs, budgets and constraints, auditability and accountability)
 
-12. About the Author
+# 13. About the Author
     Write a short paragraph about myself using these egs. Public-sector BI & systems analyst, AWS-focused BI transition and digital government and cloud analytics
