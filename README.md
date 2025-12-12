@@ -1,4 +1,12 @@
 # Public-Sector Cloud BI Analytics
+<p align="center">
+  <img src="screenshots/architecture_overview.png" width="80%" alt="Architecture Diagram">
+</p>
+
+<p align="center">
+  <strong>Architecture Overview – AWS Lakehouse + Power BI</strong>
+</p>
+
 Showing a unified view of services after migration to the cloud
 
 # 1. Project Title: Public Sector Cloud BI Analytics - Reliability, Performance & Cost Governance
@@ -46,6 +54,13 @@ Showing a unified view of services after migration to the cloud
 # 4. Architecture Overview
     This projct uses a hybrid Glue & Athena setup due to restictions encountered on the AWS account in use. This would therefore reflect a workaround in the event on constraints on an account.
 
+## Architecture Diagram
+
+<p align="center">
+  <img src="screenshots/architecture_overview.png" width="70%" alt="Architecture Diagram">
+</p>
+
+
     Logical Architecture:   
         Synthetic CSV:  S3 (raw & curated data lake)
                         AWS Glue: manual DB creation and table definitions
@@ -54,6 +69,12 @@ Showing a unified view of services after migration to the cloud
 
 
 # 5. Data Model / Star Schemas
+## Star Schema
+
+<p align="center">
+  <img src="screenshots/star_schema.png" width="70%" alt="Star Schema Diagram">
+</p>
+
 
     All data used for this project has been synthetically generated to reflect that of what AWS public sector would use in their day to day while aligning to that of Caribbean Ministries, Division and Agencies (MDAs) and what they would look at with respect to migrating to the cloud.
 
@@ -284,3 +305,16 @@ Showing a unified view of services after migration to the cloud
 
 # 13. About the Author
     Write a short paragraph about myself using these egs. Public-sector BI & systems analyst, AWS-focused BI transition and digital government and cloud analytics
+
+
+#   Dashboard Gallery
+
+### Reliability – Executive Overview
+<p align="center">
+  <img src="screenshots/reliability_exec_overview.png" width="85%" alt="Reliability Executive Dashboard">
+</p>
+
+### FinOps – Executive Summary
+<p align="center">
+  <img src="screenshots/finops_exec_summary.png" width="85%" alt="FinOps Executive Dashboard">
+</p>
