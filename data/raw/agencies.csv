@@ -1,0 +1,25 @@
+agency_id,country,country_code,agency_name,org_size,sector_type,aws_pref_region,currency,region_group
+1000,Trinidad & Tobago,TT,Ministry of Health TT-1,Large,Ministry,us-east-1,TTD,Caribbean / LATAM
+1001,Trinidad & Tobago,TT,Land Settlement Agency TT-2,Medium,Agency,us-east-1,TTD,Caribbean / LATAM
+1002,Trinidad & Tobago,TT,Ministry of Defence TT-3,Large,Ministry,us-east-1,TTD,Caribbean / LATAM
+1003,Jamaica,JM,Office of the Prime Minister JM-1,Large,Ministry,us-east-1,JMD,Caribbean / LATAM
+1004,Jamaica,JM,Legal Aid Council JM-2,Small,Agency,us-east-1,JMD,Caribbean / LATAM
+1005,Jamaica,JM,"Housing, Urban Renewal & Climate Change Division JM-3",Medium,Department,us-east-1,JMD,Caribbean / LATAM
+1006,Barbados,BB,Central Bank of Barbados BB-1,Large,Agency,us-east-1,BBD,Caribbean / LATAM
+1007,Barbados,BB,Ministry of Foreign Affairs and Foreign Trade BB-2,Medium,Ministry,us-east-1,BBD,Caribbean / LATAM
+1008,Barbados,BB,Dept of Digital Services BB-3,Medium,Ministry,us-east-1,BBD,Caribbean / LATAM
+1009,Guyana,GY,Ministry of Agriculture GY-1,Large,Ministry,us-east-1,GYD,Caribbean / LATAM
+1010,Guyana,GY,National Accreditation Council GY-2,Small,Department,us-east-1,GYD,Caribbean / LATAM
+1011,Guyana,GY,Attorney General’s Chambers & Ministry of Legal Affairs GY-3,Medium,Agency,us-east-1,GYD,Caribbean / LATAM
+1012,Dominican Republic,DO,National Archives DO-1,Medium,Agency,us-east-1,DOP,Caribbean / LATAM
+1013,Dominican Republic,DO,Youth Development Programs DO-2,Small,Agency,us-east-1,DOP,Caribbean / LATAM
+1014,Dominican Republic,DO,Ministry of Agriculture DO-3,Medium,Ministry,us-east-1,DOP,Caribbean / LATAM
+1015,Belize,BZ,Attorney General’s Ministry BZ-1,Medium,Ministry,us-east-1,BZD,Caribbean / LATAM
+1016,Belize,BZ,Belize Agricultural Health Authority BZ-2,Medium,Agency,us-east-1,BZD,Caribbean / LATAM
+1017,Belize,BZ,National Committee for Families & Children BZ-3,Small,Agency,us-east-1,BZD,Caribbean / LATAM
+1018,Panama,PA,Ministry of Economy & Finance PA-1,Large,Ministry,sa-east-1,USD,Caribbean / LATAM
+1019,Panama,PA,Women’s Ministry PA-2,Small,Ministry,sa-east-1,USD,Caribbean / LATAM
+1020,Panama,PA,National Police PA-3,Large,Agency,sa-east-1,USD,Caribbean / LATAM
+1021,Costa Rica,CR,Ministry of Foreign Affairs CR-1,Medium,Ministry,us-east-1,CRC,Caribbean / LATAM
+1022,Costa Rica,CR,Central Bank of Costa Rica CR-2,Large,Agency,us-east-1,CRC,Caribbean / LATAM
+1023,Costa Rica,CR,National Consumer Commission CR-3,Small,Agency,us-east-1,CRC,Caribbean / LATAM

@@ -1,0 +1,73 @@
+country,country_code,year,org_size,adoption_pct
+Trinidad & Tobago,TT,2023,Small,22.78
+Trinidad & Tobago,TT,2023,Medium,40.64
+Trinidad & Tobago,TT,2023,Large,55.56
+Trinidad & Tobago,TT,2024,Small,30.79
+Trinidad & Tobago,TT,2024,Medium,40.89
+Trinidad & Tobago,TT,2024,Large,56.41
+Trinidad & Tobago,TT,2025,Small,25.3
+Trinidad & Tobago,TT,2025,Medium,47.36
+Trinidad & Tobago,TT,2025,Large,61.2
+Jamaica,JM,2023,Small,23.52
+Jamaica,JM,2023,Medium,38.74
+Jamaica,JM,2023,Large,56.2
+Jamaica,JM,2024,Small,28.73
+Jamaica,JM,2024,Medium,41.4
+Jamaica,JM,2024,Large,55.96
+Jamaica,JM,2025,Small,31.38
+Jamaica,JM,2025,Medium,45.38
+Jamaica,JM,2025,Large,61.15
+Barbados,BB,2023,Small,24.54
+Barbados,BB,2023,Medium,40.78
+Barbados,BB,2023,Large,60.56
+Barbados,BB,2024,Small,29.85
+Barbados,BB,2024,Medium,44.86
+Barbados,BB,2024,Large,61.07
+Barbados,BB,2025,Small,27.42
+Barbados,BB,2025,Medium,42.19
+Barbados,BB,2025,Large,60.45
+Guyana,GY,2023,Small,23.24
+Guyana,GY,2023,Medium,41.16
+Guyana,GY,2023,Large,56.78
+Guyana,GY,2024,Small,28.51
+Guyana,GY,2024,Medium,41.04
+Guyana,GY,2024,Large,56.14
+Guyana,GY,2025,Small,31.52
+Guyana,GY,2025,Medium,47.91
+Guyana,GY,2025,Large,60.39
+Dominican Republic,DO,2023,Small,22.92
+Dominican Republic,DO,2023,Medium,39.85
+Dominican Republic,DO,2023,Large,57.99
+Dominican Republic,DO,2024,Small,28.91
+Dominican Republic,DO,2024,Medium,42.51
+Dominican Republic,DO,2024,Large,57.15
+Dominican Republic,DO,2025,Small,26.32
+Dominican Republic,DO,2025,Medium,48.63
+Dominican Republic,DO,2025,Large,62.47
+Belize,BZ,2023,Small,22.01
+Belize,BZ,2023,Medium,39.58
+Belize,BZ,2023,Large,54.15
+Belize,BZ,2024,Small,30.33
+Belize,BZ,2024,Medium,46.5
+Belize,BZ,2024,Large,61.75
+Belize,BZ,2025,Small,33.83
+Belize,BZ,2025,Medium,45.08
+Belize,BZ,2025,Large,60.4
+Panama,PA,2023,Small,19.69
+Panama,PA,2023,Medium,40.69
+Panama,PA,2023,Large,55.91
+Panama,PA,2024,Small,27.48
+Panama,PA,2024,Medium,41.41
+Panama,PA,2024,Large,62.24
+Panama,PA,2025,Small,33.78
+Panama,PA,2025,Medium,42.16
+Panama,PA,2025,Large,60.63
+Costa Rica,CR,2023,Small,24.13
+Costa Rica,CR,2023,Medium,40.96
+Costa Rica,CR,2023,Large,54.48
+Costa Rica,CR,2024,Small,28.04
+Costa Rica,CR,2024,Medium,42.59
+Costa Rica,CR,2024,Large,57.13
+Costa Rica,CR,2025,Small,34.19
+Costa Rica,CR,2025,Medium,48.65
+Costa Rica,CR,2025,Large,64.46

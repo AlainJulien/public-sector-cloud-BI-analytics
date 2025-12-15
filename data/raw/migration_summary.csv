@@ -1,0 +1,25 @@
+agency_id,country,country_code,org_size,migrated,migration_date,pre_migration_cost_usd,post_migration_cost_usd,expected_savings_pct,realized_savings_pct,sla_breaches_pre,sla_breaches_post
+1000,Trinidad & Tobago,TT,Small,No,,417726.44,418975.89,0,-0.3,4,4
+1001,Trinidad & Tobago,TT,Small,Yes,7/1/2025,352539.58,266523.47,23.09,24.4,3,1
+1002,Trinidad & Tobago,TT,Large,No,,1089319.89,1049248.53,0,3.68,5,4
+1003,Jamaica,JM,Large,No,,599371.21,612597.41,0,-2.21,3,2
+1004,Jamaica,JM,Small,Yes,7/1/2025,261422.05,208971.86,19.11,20.06,4,0
+1005,Jamaica,JM,Large,No,,483341.68,498768.23,0,-3.19,11,9
+1006,Barbados,BB,Large,Yes,9/1/2025,649155.68,509391.19,16.08,21.53,3,0
+1007,Barbados,BB,Medium,Yes,9/1/2025,275324.84,210222.73,21.5,23.65,7,3
+1008,Barbados,BB,Medium,No,,563231.53,584443.12,0,-3.77,8,8
+1009,Guyana,GY,Medium,No,,709544.53,702388.18,0,1.01,7,6
+1010,Guyana,GY,Small,Yes,8/1/2025,521493.56,429643.63,15.3,17.61,3,0
+1011,Guyana,GY,Medium,Yes,9/1/2025,618918.01,485523.11,17.68,21.55,5,1
+1012,Dominican Republic,DO,Medium,Yes,7/1/2025,666285.98,472110.75,19.94,29.14,3,0
+1013,Dominican Republic,DO,Small,No,,380573.27,363891.99,0,4.38,8,8
+1014,Dominican Republic,DO,Small,Yes,9/1/2025,551133.86,449495.54,28.78,18.44,6,3
+1015,Belize,BZ,Medium,No,,627136.68,642464.82,0,-2.44,4,4
+1016,Belize,BZ,Medium,Yes,9/1/2025,656730.63,552346.51,26.65,15.89,5,2
+1017,Belize,BZ,Small,No,,262907.37,250414.26,0,4.75,4,4
+1018,Panama,PA,Medium,No,,386808.8,384187.28,0,0.68,6,5
+1019,Panama,PA,Small,Yes,9/1/2025,338080.54,279414.4,16.66,17.35,3,1
+1020,Panama,PA,Large,Yes,9/1/2025,892879.51,655029.2,28.11,26.64,4,1
+1021,Costa Rica,CR,Medium,Yes,9/1/2025,344055.97,267213.25,29.29,22.33,9,5
+1022,Costa Rica,CR,Large,No,,395522.6,390651.17,0,1.23,8,7
+1023,Costa Rica,CR,Large,No,,1144462.57,1117509.66,0,2.36,3,2
