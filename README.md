@@ -1,4 +1,5 @@
 # Public-Sector Cloud BI Analytics
+## Reliability, Performance & Cost Governance
 <p align="center">
   <img src="screenshots/architecture_overview.png" width="80%" alt="Architecture Diagram">
 </p>
@@ -7,55 +8,63 @@
   <strong>Architecture Overview – AWS Lakehouse + Power BI</strong>
 </p>
 
-Showing a unified view of services after migration to the cloud
+A business intelligence solution that evaluates post-migration cloud reliability, performance behavior, and financial governance across public-sector workloads.
 
-# 1. Project Title: Public Sector Cloud BI Analytics - Reliability, Performance & Cost Governance
+# 1. Project Overview
+    This project delivers an end-to-end cloud analytics capability designed for public-sector ministries and agencies operating in constrained, budget-driven environments.
+
+    The solution enables leadership and technical teams to:
+        - Assess digital service reliability after cloud migration
+        - Compare peak vs non-peak performance behavior
+        - Monitor budget vs actual spend and forecast future costs
+        - Enforce FinOps governance through tagging and waste analysis
+        - Identify engineering and financial risk hotspots across agencies
+
+    The project reflects real-world public-sector constraints, including limited IAM permissions and governance requirements, while demonstrating practical BI engineering patterns.
+
+    Technology Stack used:
+    Data Platform: Amazon S3, AWS Glue (metadata), Amazon Athena
+    Data Modeling: Star Schemas (dimensions, fact tables, CTAS)
+    Analytics & Visualizaton: Power BI
+    Domain Covered: Service reliability, performance engineering, FinOPs governance
 
 
-# 2. Summary
-    This Business Intelligence (BI) solution is designed to empower ministries and public-sector agencies by ensuring both the reliability and performance of their cloud services while simultaneously maintaining rigorous budget control and financial oversight. By integrating AWS-style analytics stack with FinOps cost data, the solution delivers actionable insights into service uptime, system performance, and operational expenditures. It enables agencies to monitor service reliability in real time, forecast future costs, and enforce governance practices to align with budget constraints. This dual-purpose approach supports both operational efficiency and financial accountability in the public sector's cloud environments.
-
-    AWS Stack used:
-    - S3 + Glue + Athena: Data Platform
-    - Star-schema modeling: Analytics
-    - Power BI dashboard: Storytelling
-    - Two Business Narratives
-
-
-# 3. Business Narratives
+# 2. Business Narratives
    a. Narrative 1 - Digital Service Reliability & Performance
-                    As public sector agencies migrate to the cloud, maintaining digital service reliability and performance becomes critical. Often, cloud-based systems face challenges such as service disruptions or inconsistent performance. This BI solution addresses these issues by leveraging real-time telemetry data to monitor system uptime and performance, ensuring that any anomalies are quickly detected and resolved. By providing actionable insights, it helps agencies maintain the reliability needed for critical public services.
+                    This narrative evaluates whether cloud-migrated public services remain stable, performant, and resilient under peak demand.
                     
-                    - Key Questions from Leadership:
+                    - Key Questions from Leadership to be answered:
                         a. Are critical services reliable during peak periods e.g. tax times?
                         b. Did reliability improve post migration? 
                         c. Which services/MDAs generate the most SLA breaches, latency or errors?
+                        d. How do utilization and cost patterns correlate with reliability risk?
                     
-                    - Question answered:
+                    - Analytical focus:
                         a. Pre vs Post migration Latency, Error rate and SLA Breaches
                         b. Non-peak vs Peak performance
                         c. Service Risk ranking across agencies and regions
                         d. Relationship between utilisation, cost and reliability
 
    b. Narrative 2 - FinOps — Budget Governance, Forecasting & Cloud Cost Optimization
-                    Cloud cost management is a significant challenge for public-sector agencies, with cost variability and waste often resulting from ineffective resource management and poor tagging practices. This BI solution integrates FinOps data to enable precise cost forecasting, enforce tagging governance, and identify inefficiencies. This approach helps agencies minimize waste, stay within budget, and ensure financial transparency while forecasting future expenses with greater accuracy.
+                    This narrative addresses cloud cost volatility, attribution challenges, and governance gaps common in public-sector cloud adoption.
 
-                    - Areas MDAs have issues with post migration
-                        a. Variable monthly spend away from accustomed fixed costs 
-                        b. Unclear attribution of cost to agencies/services
-                        c. Poor tagging governance (Untagged costs)
-                        d. Difficult time identifying and forecasting spend to avoid waste (this is important as it greatly impacts budgets)
+                    - Key Questions from MDAs to be answered:
+                        a. How does actual spend compare to assigned budgets? 
+                        b. Which agencies show recurring cost overruns or inefficient growth?
+                        c. Where do tagging gaps reduce financial transparency?
+                        d. What idle or under-utilized resources represent avoidable waste?
+                        e. What provider concentration or multi-cloud risks exist?
                     
-                    - Areas this FinOps assists to answer
-                        a. Budget assigned vs Actual Budget
+                    - Analytical focus:
+                        a. Budget vs actual spend and variance tracking
                         b. Spending patterns and forecasts
-                        c. Tagging compliance & untagged spend
-                        d. Idle cost optimisation opportunities
-                        e. Strategy for Multi-cloud providers
+                        c. Tagging compliance & untagged cost exposure
+                        d. Idle resource identification and optimization opportunities
+                        e. Cloud provider spend concentration
 
 
-# 4. Architecture Overview
-    This projct uses a hybrid Glue & Athena setup due to restictions encountered on the AWS account in use. This would therefore reflect a workaround in the event on constraints on an account.
+# 3. Architecture Overview
+    This projct uses a hybrid Glue & Athena architecture, reflecting account-level IAM constraints commonly encountered in public-sector environments.
 
 ## Architecture Diagram
 
@@ -64,14 +73,14 @@ Showing a unified view of services after migration to the cloud
 </p>
 
 
-    Logical Architecture:   
-        Synthetic CSV:  S3 (raw & curated data lake)
-                        AWS Glue: manual DB creation and table definitions
-                        Amazon Athena: manual table creations:- Curated dimensions and fact tables created using CTAS
-                        Power BI: engineering dashboards
+    Logical flow:   
+        S3: Raw and curated synthetic datasets
+        AWS Glue: Manual database creation and table definitions
+        Amazon Athena: SQL-based transformations and CTAS modeling
+        Power BI: Analytical and executive dashboards
 
 
-# 5. Data Model / Star Schemas
+# 4. Data Model / Star Schemas
 ## Star Schema
 
 <p align="center">
@@ -79,15 +88,15 @@ Showing a unified view of services after migration to the cloud
 </p>
 
 
-    All data used for this project has been synthetically generated to reflect that of what AWS public sector would use in their day to day while aligning to that of Caribbean Ministries, Division and Agencies (MDAs) and what they would look at with respect to migrating to the cloud.
+    All data used for this project has been synthetically generated to reflect that of AWS public-sector cloud usage while reflecting the organizational structure and constraints of Caribbean Ministries, Departments, and Agencies (MDAs).
 
-    5.1 Data & Tables
-        Raw Files (S3/sample-data/): agencies.csv – list of ministries / agencies (country, org size, preferred region)
-                        baseline_adoption.csv – basic cloud maturity context
-                        usage_monthly.csv – monthly usage & cost per agency/service/region
-                        provider_spend.csv – annual spend by provider (AWS, Azure, GCP)
-                        migration_summary.csv – pre/post migration cost & SLA info
-                        tagging_compliance.csv – tagging % and untagged cost over time
+        Core Datasets (Raw)
+            agencies.csv – list of ministries / agencies (country, org size, preferred region)
+            baseline_adoption.csv – basic cloud maturity context
+            usage_monthly.csv – monthly usage & cost per agency/service/region
+            provider_spend.csv – annual spend by provider (AWS, Azure, GCP)
+            migration_summary.csv – pre/post migration cost & SLA info
+            tagging_compliance.csv – tagging % and untagged cost over time
         
         Curated Athena CTAS (S3/curated/)
         Dimensions: dim_agency – agency, country, sector type, org size, preferred AWS region
@@ -95,14 +104,15 @@ Showing a unified view of services after migration to the cloud
                     dim_service – service category (IaaS / PaaS / SaaS, criticality)
                     dim_region – AWS region + regional grouping
         
-        Reliability Fact Tables: fact_usage_monthly – usage & cost per agency/service/month
-                                 fact_performance – derived latency, error_rate_pct, SLA breach flags, response_time_score
-                                 fact_migration_summary – pre/post migration cost, realised savings %, SLA change
+        Fact Tables
+        Reliability: fact_usage_monthly – usage & cost per agency/service/month
+                     fact_performance – derived latency, error_rate_pct, SLA breach flags, response_time_score
+                     fact_migration_summary – pre/post migration cost, realised savings %, SLA change
         
-        FinOps Fact Tables: fact_cost_monthly – cost, utilisation, workload units, cost_per_unit
-                            fact_finance_governance – tagging %, untagged_cost_usd, governance_risk_flag
-                            fact_provider_finance – provider-level spend & provider_share_pct
-                            fact_forecast_input – monthly_cost time series per agency for forecasting
+        FinOps: fact_cost_monthly – cost, utilisation, workload units, cost_per_unit
+                fact_finance_governance – tagging %, untagged_cost_usd, governance_risk_flag
+                fact_provider_finance – provider-level spend & provider_share_pct
+                fact_forecast_input – monthly_cost time series per agency for forecasting
         
         Derived Views: v_cost_spikes – month-over-month spend growth & spike flags
                        v_cloud_waste – idle_cost based on utilisation < 20%
@@ -232,64 +242,51 @@ Showing a unified view of services after migration to the cloud
 
 
 # 7. Dashboards
-    Below are screenshots for each page of the PowerBI dashboard. 
     Power BI connected to Athena via Amazon Athena ODBC driver to load data from the S3 bucket.
 
-    Reliability Dashboards
-    - Reliability Overview: Stability Score (0-100), SLA Breach Rate %, Avrage Latency & Error Rat, Stability trend over time, Top Risk Services table
+    Reliability Dashboard
+    - Executive Overview: Stability Score (0-100), SLA Breach Rate %, Avrage Latency & Error Rat, Stability trend over time, Top Risk Services table
 
-    - SLA Performance: Engineering KPIs (latency breaches, error breaches, utilisation score), SLA breach trends, Latency vs utilisation scatter (stress hotspots), Root-cause table for engineering teams
+    - SLA & Performance: Engineering KPIs (latency breaches, error breaches, utilisation score), SLA breach trends, Latency vs utilisation scatter (stress hotspots), Root-cause table for engineering teams
 
-    - Peak vs Non-Peak: eak vs Non-Peak stability and latency, Peak-only SLA trends, Agencies/services that collapse under peak load
+    - Peak vs Non-Peak Stress Analysis: Peak vs Non-Peak stability and latency, Peak-only SLA trends, Agencies/services that collapse under peak load
 
-    - Migration Impact: Pre vs Post stability, latency, and SLA breaches, Migration summary by agency (cost_delta_usd, realised_savings_pct), Scatter of cost_delta vs stability_delta (cloud ROI vs reliability)
+    - Migration Impact Assessment: Pre vs Post stability, latency, and SLA breaches, Migration summary by agency (cost_delta_usd, realised_savings_pct), Scatter of cost_delta vs stability_delta (cloud ROI vs reliability)
 
     FinOps Dashboards
-    - Budget Oversight: YTD Actual vs Budget, YTD Variance % (Green/Yellow/Red), Budget vs Actual over time, Agency-level variance table
+    - Budget Oversight with Variance indicators: YTD Actual vs Budget, YTD Variance % (Green/Yellow/Red), Budget vs Actual over time, Agency-level variance table
 
-    - Cost Trends & Forecasting: Monthly spend trend + Power BI forecast, MoM Spend Growth %, Rolling 3-month spend, Service mix over time (IaaS / PaaS / SaaS), Top-growth agencies table
+    - Cost Trends & Forecast projections: Monthly spend trend + Power BI forecast, MoM Spend Growth %, Rolling 3-month spend, Service mix over time (IaaS / PaaS / SaaS), Top-growth agencies table
 
-    - Governance & Waste: Tagged % and governance risk count, Untagged Cost and Waste % (idle cost), Agency-level governance heat table, Waste by service and agency
+    - Tagging compliance and Waste analysis: Tagged % and governance risk count, Untagged Cost and Waste % (idle cost), Agency-level governance heat table, Waste by service and agency
 
-    - Provider Strategy: Spend by provider (AWS / Azure / GCP) over time, Provider share % per agency, Concentration risk view (e.g. AWS share by agency)
+    - Cloud Provider Strategy & concentration risk: Spend by provider (AWS / Azure / GCP) over time, Provider share % per agency, Concentration risk view (e.g. AWS share by agency)
 
-    - Executive Summary (One-page view for executives): YTD Spend, Variance, Waste %, AWS dependency, High-level trend with forecast, Budget vs Actual Budget mini-view, Optimisation opportunities (untagged + idle cost + high-risk spend), Top agencies at financial risk
+    A dedicated executive summary page consolidates financial and reliability signals into a single, decision-ready view.
 
 
-# 8. Key Insights
-##    Digital Services Reliability & Performance insights
-        "Some agencies show better stability and lowr SLA breaches post migration"
-        "A few agencies carry high engineering risks due to: under-utlized resources , low tagging compliance"
-        "Opportunities exist for auto-scaling, caching, service refactoring"
-    e.g. Migration improved stability by 28% across critical services."
-        "Two agencies consumed 60% of the cloud budget due to storage-heavy workloads."
-        "Forecast indicates a 12% budget overrun by Q4 without efficiency improvements."
-        "Untagged cost accounted for 18% of spend, violating tagging policy guidelines."
-        "Idle resources represent $180K/year in avoidable waste."
-    
-##    FinOps — Budget Governance, Forecasting & Cloud Cost Optimization insights
--       Budget Governance: several MDAs overspent on a YTD basis *input %*
-                         : Forecast indicates possible budget issues in Q3 if no intervention is done
--       Waste & Optimization: Significant spend is linked to Idle resources 
-                            : Untagged costs leads to reduced financial transparency and weakens chargeback (resources paid for by departments or agencies) / showback (IT/cloud cost presented to BUs) models
--       Provider Strategy: High concentration risk as some MDAs are rely heavily on AWS
-                         : Some MDAs show multi-clod fragmentation which can lead to complex governance
+# 8. Key Insights (sample)
+        - Post-migration stability improved across several critical services, with a measurable reduction in SLA breaches
+        - A small number of agencies account for a disproportionate share of cloud spend
+        - Untagged costs materially reduce financial transparency and weaken chargeback models
+        - Idle or under-utilized resources represent significant, avoidable annual waste
+        - Forecasting indicates potential budget overruns without early optimization actions
     
 
 # 9. Recommendations
-    High-level governance and optimisation guidance:
-    - Improve tagging policies
-    - Implement quarterly forecasting cycles
-    - Rightsize idle or under-utilised workloads
-    - Introduce cost anomaly alerts
-    - Expand PaaS usage to reduce IaaS-heavy costs
+    - Strengthen tagging governance and enforcement policies
+    - Introduce rolling cost forecasts and quarterly review cycles
+    - Rightsize under-utilized workloads
+    - Implement cost anomaly detection
+    - Increase managed service (PaaS) adoption to reduce IaaS overhead
+
 
 # 10. How to Run this Project
     - Prerequisites: AWS account with S3, Glue and Athena access, Power BI Desktop (free), Ahtena ODBC driver (to connect S3 to Power Bi)
-        1. Clone Repo
+        1. Clone Repository
         2. Create / Upload raw files into S3
         3. Create manual Databases in Glue and manually create 3 raw tables (for learning or can just create all in Athena)
-        4. Create scripts for manual raw table creation & CTAS within Athena to build dimensions, facts and views 
+        4. Create & execute scripts for manual raw table creation & CTAS within Athena to build dimensions, facts and views 
         5. Use the Athena ODBC driver and configure DSN (install ODBC driver if needed). Open PowerBI, connect to Athena and import curated tables from ps_cloud_curated and Power Bi auto determines relationships (double check for accuracy). Build any DAX measures needed after loading.
 
 # 11. Repository Structure
@@ -306,15 +303,15 @@ Showing a unified view of services after migration to the cloud
 # 12. Skills Demonstrated & Learned
     a. BI Engineering (Dimensions, fact tables, CTAS pipelines)
     b. Data Modeling (Star Schemas)
-    c. AWS (S3, Glue, Athena)
-    d. SQL (Modeling, aggregation, derived metrics, views, time-series prep)
+    c. AWS analytics services (S3, Glue, Athena)
+    d. SQL transformation and metric design
     e. Power BI (Data modeling, DAX measures, executive & engineering dashboards)
-    f. FinOps Governance (Budget vs Actual, cost forecasting, tagging governance, waste analysis)
-    g. Public-Sector Analytics (A focus on MDAs, budgets and constraints, auditability and accountability)
+    f. FinOps Governance and cost analytics
+    g. Public-Sector data and governance considerations
 
 
 # 13. About the Author
-    Hi, I'm Alain Julien a public-sector business intelligence and systems analyst with hands-on experience supporting enterprise HR, cloud-migration, and data-modernization initiatives across government. My work involved BI, data modeling, business process optimization, stakeholder managment, system testing and understanding and identifying day-to-day operational analytics to help MDAs make faster, evidence-driven decisions. I am currently transitioning into business intelligence engineering, with the use of AI-assisted insights to build cloud-ready analytics solutions and end-to-end data pipelines. My goal is truly seeing the impact data can have on creating a digital government and improving how public institution services serve people, while identifying measurable transformations goals to help institutions reach this goal.
+    Business Systems Analyst transitioning into Business Intelligence, with hands-on experience building end-to-end analytics projects focused on cloud migration, service reliability, and cost governance in public-sector environments. This project represents applied BI engineering work using AWS analytics services and Power BI.
 
 
 #   Dashboard Gallery
