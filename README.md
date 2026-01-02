@@ -151,7 +151,7 @@ A business intelligence solution that evaluates post-migration cloud reliability
                  dim_cloud_provider
 
 
-# 6. SQL Models
+# 5. SQL Models
     RAW Layer
     This layer stores original, unaltered copies of the datasets simulated for this project in the S3 bucket that are queried in Athena but no transformations are applied to the originals. Due to IAM restrictions on the account, below is an example that shows the manual table creation for the raw data:
      --Provider spend table
@@ -241,7 +241,7 @@ A business intelligence solution that evaluates post-migration cloud reliability
      Here the Reliability and FinOps fact tables were created: fact_performance, fact_migration_summary, fact_cost_monthly, fact_finance_governance, fact_provider_finance, fact_forecast_input. Basic views were derived as well; v_cost_spikes, v_cloud_waste for optics in the event of leadership ask.
 
 
-# 7. Dashboards
+# 6. Dashboards
     Power BI connected to Athena via Amazon Athena ODBC driver to load data from the S3 bucket.
 
     Reliability Dashboard
@@ -265,7 +265,7 @@ A business intelligence solution that evaluates post-migration cloud reliability
     A dedicated executive summary page consolidates financial and reliability signals into a single, decision-ready view.
 
 
-# 8. Key Insights (sample)
+# 7. Key Insights (sample)
         - Post-migration stability improved across several critical services, with a measurable reduction in SLA breaches
         - A small number of agencies account for a disproportionate share of cloud spend
         - Untagged costs materially reduce financial transparency and weaken chargeback models
@@ -273,7 +273,7 @@ A business intelligence solution that evaluates post-migration cloud reliability
         - Forecasting indicates potential budget overruns without early optimization actions
     
 
-# 9. Recommendations
+# 8. Recommendations
     - Strengthen tagging governance and enforcement policies
     - Introduce rolling cost forecasts and quarterly review cycles
     - Rightsize under-utilized workloads
@@ -281,7 +281,7 @@ A business intelligence solution that evaluates post-migration cloud reliability
     - Increase managed service (PaaS) adoption to reduce IaaS overhead
 
 
-# 10. How to Run this Project
+# 9. How to Run this Project
     - Prerequisites: AWS account with S3, Glue and Athena access, Power BI Desktop (free), Ahtena ODBC driver (to connect S3 to Power Bi)
         1. Clone Repository
         2. Create / Upload raw files into S3
@@ -289,7 +289,7 @@ A business intelligence solution that evaluates post-migration cloud reliability
         4. Create & execute scripts for manual raw table creation & CTAS within Athena to build dimensions, facts and views 
         5. Use the Athena ODBC driver and configure DSN (install ODBC driver if needed). Open PowerBI, connect to Athena and import curated tables from ps_cloud_curated and Power Bi auto determines relationships (double check for accuracy). Build any DAX measures needed after loading.
 
-# 11. Repository Structure
+# 10. Repository Structure
         
         - dashboards/         # Power BI files (reliability + FinOps)
         - data/               # Sample raw/curated data (if included)
@@ -300,7 +300,7 @@ A business intelligence solution that evaluates post-migration cloud reliability
         - README.md           # This file
 
 
-# 12. Skills Demonstrated & Learned
+# 11. Skills Demonstrated & Learned
     a. BI Engineering (Dimensions, fact tables, CTAS pipelines)
     b. Data Modeling (Star Schemas)
     c. AWS analytics services (S3, Glue, Athena)
@@ -310,7 +310,7 @@ A business intelligence solution that evaluates post-migration cloud reliability
     g. Public-Sector data and governance considerations
 
 
-# 13. About the Author
+# 12. About the Author
     Business Systems Analyst transitioning into Business Intelligence, with hands-on experience building end-to-end analytics projects focused on cloud migration, service reliability, and cost governance in public-sector environments. This project represents applied BI engineering work using AWS analytics services and Power BI.
 
 
