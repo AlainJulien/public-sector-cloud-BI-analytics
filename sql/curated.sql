@@ -22,29 +22,6 @@ SET TBLPROPERTIES (
 );
 
 
---Dim agency
-CREATE TABLE ps_cloud_curated.dim_agency
-WITH (
-  format = 'PARQUET',
-  external_location = 's3://public-sector-cloud-analytics-aj/curated/dim_agency/'
-) AS
-SELECT
-  agency_id,
-  agency_name,
-  country,
-  country_code,
-  org_size,
-  sector_type,
-  aws_pref_region,
-  currency,
-  region_group
-FROM ps_cloud_raw.ps_cloud_raw_agencies;
-
-
---sanity check
-SELECT * FROM ps_cloud_curated.dim_agency LIMIT 10;
-
-
 --dim agency clean
 CREATE TABLE ps_cloud_curated.dim_agency_clean
 WITH (
@@ -64,7 +41,11 @@ SELECT
 FROM ps_cloud_raw.ps_cloud_raw_agencies
 GROUP BY agency_id;
 
-drop TABLE dim_service;
+--sanity check
+SELECT * FROM ps_cloud_curated.dim_agency_clean LIMIT 10;
+
+
+DROP TABLE IF EXISTS ps_cloud_curated.dim_service;
 
 --dim service
 CREATE TABLE ps_cloud_curated.dim_service
@@ -83,7 +64,8 @@ FROM (
 --sanity check
 SELECT * FROM ps_cloud_curated.dim_service LIMIT 10;
 
-drop TABLE dim_region;
+
+DROP TABLE IF EXISTS ps_cloud_curated.dim_region;
 
 --dim region
 CREATE TABLE ps_cloud_curated.dim_region
@@ -101,7 +83,8 @@ FROM ps_cloud_raw.ps_cloud_raw_agencies;
 --sanity check
 SELECT * FROM ps_cloud_curated.dim_region LIMIT 10;
 
-drop TABLE dim_date;
+
+DROP TABLE IF EXISTS ps_cloud_curated.dim_date;
 
 --dim date
 CREATE TABLE ps_cloud_curated.dim_date
