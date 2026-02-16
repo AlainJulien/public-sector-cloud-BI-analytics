@@ -22,7 +22,7 @@ SELECT
   u.migration_status,
   u.aws_region
 FROM ps_cloud_raw.ps_cloud_raw_usage_monthly u
-LEFT JOIN ps_cloud_curated.dim_agency a
+LEFT JOIN ps_cloud_curated.dim_agency_clean a
   ON u.agency_id = a.agency_id
 LEFT JOIN ps_cloud_curated.dim_service s
   ON u.service_type = s.service_type
@@ -57,7 +57,7 @@ SELECT
   m.sla_breaches_post,
   (m.post_migration_cost_usd - m.pre_migration_cost_usd) AS cost_delta_usd
 FROM ps_cloud_raw.ps_cloud_raw_migration_summary m
-LEFT JOIN ps_cloud_curated.dim_agency a
+LEFT JOIN ps_cloud_curated.dim_agency_clean a
   ON m.agency_id = a.agency_id;
 
 --sanity check
@@ -77,7 +77,7 @@ SELECT
   t.untagged_cost_usd
 FROM ps_cloud_raw.ps_cloud_raw_tagging_compliance t
 LEFT JOIN ps_cloud_curated.dim_date d
-  ON date_parse(t.month || '-01', '%Y-%d-%m') = d.date_key;
+  ON date_parse(t.month || '-01', '%Y-%m-%d') = d.date_key;
 
 --sanity check
 SELECT * FROM ps_cloud_curated.fact_tagging_compliance LIMIT 5;
@@ -206,7 +206,7 @@ SELECT
     END AS cost_per_unit
 
 FROM ps_cloud_raw.ps_cloud_raw_usage_monthly u
-LEFT JOIN ps_cloud_curated.dim_agency a
+LEFT JOIN ps_cloud_curated.dim_agency_clean a
   ON u.agency_id = a.agency_id
 LEFT JOIN ps_cloud_curated.dim_date d
   ON date_parse(u.month || '-01', '%Y-%m-%d') = d.date_key
