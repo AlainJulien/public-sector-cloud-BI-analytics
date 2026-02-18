@@ -11,7 +11,7 @@
 A business intelligence solution that evaluates post-migration cloud reliability, performance behavior, and financial governance across public-sector workloads.
 
 # 1. Project Overview
-#Live Dashbaord
+##Live Dashboard
 
     View Interactive Power BI Report: https://app.powerbi.com/groups/me/reports/5f48372b-da4a-456f-b52b-d1fe77f50c82?ctid=1ee22a7c-e8ec-43bf-bfcc-a5a7afc48241&pbi_source=linkShare
     
@@ -275,10 +275,10 @@ A business intelligence solution that evaluates post-migration cloud reliability
 
 
 # 7. Key Insights
-        - 7 of 9 ministries showed measurable stability improvements post-migration, with average SLA breach rates falling by 34%, however 2 ministries showed no improvement despite a combined 28% increase in cloud spend, indicating over-provisioning rather than               demand growth
-        - The top 2 agencies account for 58% of total month-over-month cost acceleration across the portfolio, despite representing only 22% of total agency count, targeted rightsizing on these 2 agencies would materially reduce portfolio-wide budget risk
-        - Approximately 22% of monthly cloud spend shows no corresponding increase in compute utilisation or workload activity, representing an estimated USD 95,000 in recoverable waste annually, unevenly distributed, with smaller agencies exhibiting waste ratios              up to 31% of total spend
-        - Forecasting indicates potential budget overruns without early optimization actions
+      - 7 of 9 ministries showed measurable stability improvements post-migration, with average SLA breach rates falling by 34%, however 2 ministries showed no improvement despite a combined 28% increase in cloud spend, indicating over-provisioning rather than               demand growth
+      - The top 2 agencies account for 58% of total month-over-month cost acceleration across the portfolio, despite representing only 22% of total agency count, targeted rightsizing on these 2 agencies would materially reduce portfolio-wide budget risk
+      - Approximately 22% of monthly cloud spend shows no corresponding increase in compute utilisation or workload activity, representing an estimated USD 95,000 in recoverable waste annually, unevenly distributed, with smaller agencies exhibiting waste ratios              up to 31% of total spend
+      - Forecasting indicates potential budget overruns without early optimization actions
     
 
 # 8. Recommendations
