@@ -11,6 +11,12 @@
 A business intelligence solution that evaluates post-migration cloud reliability, performance behavior, and financial governance across public-sector workloads.
 
 # 1. Project Overview
+#Live Dashbaord
+
+    View Interactive Power BI Report: https://app.powerbi.com/groups/me/reports/5f48372b-da4a-456f-b52b-d1fe77f50c82?ctid=1ee22a7c-e8ec-43bf-bfcc-a5a7afc48241&pbi_source=linkShare
+    
+    Two interconnected case studies, four dashboard pages each built on synthetic data reflecting Caribbean public sector cloud adoption patterns.
+  
     This project delivers an end-to-end cloud analytics capability designed for public-sector ministries and agencies operating in constrained, budget-driven environments.
 
     The solution enables leadership and technical teams to:
@@ -27,6 +33,8 @@ A business intelligence solution that evaluates post-migration cloud reliability
     Data Modeling: Star Schemas (dimensions, fact tables, CTAS)
     Analytics & Visualizaton: Power BI
     Domain Covered: Service reliability, performance engineering, FinOPs governance
+
+    While the datasets are synthetic, the analytical scenarios, governance frameworks, stakeholder structures and fiscal cycle patterns in this portfolio are designed to reflect the operating context of Caribbean small island developing states. Caribbean public-         sector organisations face a distinct set of cloud governance challenges: fixed annual budgets under Westminster-style parliamentary accountability, concentrated portfolios of high-impact citizen services, limited in-house cloud engineering capacity and demand        cycles driven by regional fiscal and administrative patterns. The KPI frameworks, SLA thresholds and governance rules across both case studies are calibrated to these constraints, making this portfolio directly applicable to regional digital transformation           programs.
 
 
 # 2. Business Narratives
@@ -45,8 +53,8 @@ A business intelligence solution that evaluates post-migration cloud reliability
                         c. Service Risk ranking across agencies and regions
                         d. Relationship between utilisation, cost and reliability
 
-   b. Narrative 2 - FinOps — Budget Governance, Forecasting & Cloud Cost Optimization
-                    This narrative addresses cloud cost volatility, attribution challenges, and governance gaps common in public-sector cloud adoption.
+   b. Narrative 2 - FinOps - Budget Governance, Cost Trend Analysis & Optimization
+                    This narrative addresses cloud cost volatility, attribution challenges and governance gaps common in public-sector cloud adoption.
 
                     - Key Questions from MDAs to be answered:
                         a. How does actual spend compare to assigned budgets? 
@@ -88,7 +96,7 @@ A business intelligence solution that evaluates post-migration cloud reliability
 </p>
 
 
-    All data used for this project has been synthetically generated to reflect that of AWS public-sector cloud usage while reflecting the organizational structure and constraints of Caribbean Ministries, Departments, and Agencies (MDAs).
+    All data used for this project has been synthetically generated to reflect realistic AWS public-sector cloud usage patterns, with organizational structures modeled on Caribbean Ministries, Departments and Agencies (MDAs). Agency names reflect realistic               government structures across Trinidad & Tobago, Jamaica, Barbados and the Bahamas - including entities such as Inland Revenue Division, Customs and Excise Division, and Tax Administration Jamaica - providing regional authenticity without referencing any              specific real-world systems or organisations.
 
         Core Datasets (Raw)
             agencies.csv – list of ministries / agencies (country, org size, preferred region)
@@ -238,7 +246,8 @@ A business intelligence solution that evaluates post-migration cloud reliability
      --sanity check
      SELECT * FROM ps_cloud_curated.fact_usage_monthly LIMIT 5;
 
-     Here the Reliability and FinOps fact tables were created: fact_performance, fact_migration_summary, fact_cost_monthly, fact_finance_governance, fact_provider_finance, fact_forecast_input. Basic views were derived as well; v_cost_spikes, v_cloud_waste for optics in the event of leadership ask.
+     Here the Reliability and FinOps fact tables were created: fact_performance, fact_migration_summary, fact_cost_monthly, fact_finance_governance, fact_provider_finance, fact_forecast_input. Basic views were derived as well; v_cost_spikes, v_cloud_waste for optics      in the event of leadership ask.
+     Additionally, derived analytical views (v_cost_trends, v_budget_runrate, v_seasonality_index, v_sla_bands) and data quality checks (dq_checks.sql) ensure KPI inputs are decision-ready and validated before dashboard consumption. See `/sql/README.md` for the full      execution order and design decisions.
 
 
 # 6. Dashboards
@@ -265,11 +274,10 @@ A business intelligence solution that evaluates post-migration cloud reliability
     A dedicated executive summary page consolidates financial and reliability signals into a single, decision-ready view.
 
 
-# 7. Key Insights (sample)
-        - Post-migration stability improved across several critical services, with a measurable reduction in SLA breaches
-        - A small number of agencies account for a disproportionate share of cloud spend
-        - Untagged costs materially reduce financial transparency and weaken chargeback models
-        - Idle or under-utilized resources represent significant, avoidable annual waste
+# 7. Key Insights
+        - 7 of 9 ministries showed measurable stability improvements post-migration, with average SLA breach rates falling by 34%, however 2 ministries showed no improvement despite a combined 28% increase in cloud spend, indicating over-provisioning rather than               demand growth
+        - The top 2 agencies account for 58% of total month-over-month cost acceleration across the portfolio, despite representing only 22% of total agency count, targeted rightsizing on these 2 agencies would materially reduce portfolio-wide budget risk
+        - Approximately 22% of monthly cloud spend shows no corresponding increase in compute utilisation or workload activity, representing an estimated USD 95,000 in recoverable waste annually, unevenly distributed, with smaller agencies exhibiting waste ratios              up to 31% of total spend
         - Forecasting indicates potential budget overruns without early optimization actions
     
 
@@ -311,10 +319,13 @@ A business intelligence solution that evaluates post-migration cloud reliability
 
 
 # 12. About the Author
-    Business Systems Analyst transitioning into Business Intelligence, with hands-on experience building end-to-end analytics projects focused on cloud migration, service reliability, and cost governance in public-sector environments. This project represents applied BI engineering work using AWS analytics services and Power BI.
+    Business Systems Analyst transitioning into Business Intelligence, with hands-on experience building end-to-end analytics projects focused on cloud migration, service reliability and cost governance in public-sector environments. This project represents applied      BI engineering work using AWS analytics services and Power BI.
+
+    Connect: [LinkedIn](https://www.linkedin.com/in/alain-julien/) | [GitHub](https://github.com/AlainJulien)
 
 
 #   Dashboard Gallery
+    View Interactive Power BI Report: https://app.powerbi.com/groups/me/reports/5f48372b-da4a-456f-b52b-d1fe77f50c82?ctid=1ee22a7c-e8ec-43bf-bfcc-a5a7afc48241&pbi_source=linkShare
 
 ### Reliability – Executive Overview
 <p align="center">
