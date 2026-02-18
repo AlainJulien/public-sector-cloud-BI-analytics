@@ -72,7 +72,7 @@ Live Dashboard
 
 
 # 3. Architecture Overview
-    This projct uses a hybrid Glue & Athena architecture, reflecting account-level IAM constraints commonly encountered in public-sector environments.
+    This project uses a hybrid Glue & Athena architecture, reflecting account-level IAM constraints commonly encountered in public-sector environments.
 
 ## Architecture Diagram
 
