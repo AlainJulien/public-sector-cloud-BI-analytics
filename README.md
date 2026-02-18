@@ -107,7 +107,7 @@ Live Dashboard
             tagging_compliance.csv – tagging % and untagged cost over time
         
         Curated Athena CTAS (S3/curated/)
-        Dimensions: dim_agency – agency, country, sector type, org size, preferred AWS region
+        Dimensions: dim_agency_clean – agency, country, sector type, org size, preferred AWS region
                     dim_date – month-level calendar with peak_period_flag
                     dim_service – service category (IaaS / PaaS / SaaS, criticality)
                     dim_region – AWS region + regional grouping
@@ -131,7 +131,7 @@ Live Dashboard
                dim_date
                   |
                   |
-       dim_agency ---- dim_service ---- dim_region
+       dim_agency_clean ---- dim_service ---- dim_region
                   \       |      /
                    \      |     /
                    fact_usage_monthly
@@ -150,7 +150,7 @@ Live Dashboard
                     dim_date
                         |
                         |
-         dim_agency -- fact_cost_monthly -- dim_service
+         dim_agency_clean -- fact_cost_monthly -- dim_service
                         |
                  fact_tagging_compliance
                         |
@@ -189,10 +189,10 @@ Live Dashboard
     Curated Layer
     This layer turns raw datasets into analysis-ready tables. It involves normalization, filtering, deriving of metrics and identification of keys for joins. This layer was fully generated using Athena e.g.:
     --Dim agency
-        CREATE TABLE ps_cloud_curated.dim_agency
+        CREATE TABLE ps_cloud_curated.dim_agency_clean
         WITH (
             format = 'PARQUET',
-            external_location = 's3://public-sector-cloud-analytics-aj/curated/dim_agency/'
+            external_location = 's3://public-sector-cloud-analytics-aj/curated/dim_agency_clean/'
         ) AS
         SELECT
             agency_id,
@@ -207,7 +207,7 @@ Live Dashboard
         FROM ps_cloud_raw.ps_cloud_raw_agencies;
 
     --sanity check
-    SELECT * FROM ps_cloud_curated.dim_agency LIMIT 10;
+    SELECT * FROM ps_cloud_curated.dim_agency_clean LIMIT 10;
 
     It also created the Dimensions: dim_date, dim_region, dim_services, dim_agency_clean.
 
@@ -234,7 +234,7 @@ Live Dashboard
                 u.migration_status,
                 u.aws_region
             FROM ps_cloud_raw.ps_cloud_raw_usage_monthly u
-            LEFT JOIN ps_cloud_curated.dim_agency a
+            LEFT JOIN ps_cloud_curated.dim_agency_clean a
                 ON u.agency_id = a.agency_id
             LEFT JOIN ps_cloud_curated.dim_service s
                 ON u.service_type = s.service_type
